@@ -47,7 +47,7 @@ public class student_info
     
     public double getGrades()
     {
-        
+        return grades;
     }
        
     
@@ -59,7 +59,31 @@ public class Student_Information_System
 {
     public static void main(String[] args) 
     {
-       Scanner scanner 
+       Scanner scanner = new Scanner(System.in);
+       
+       //Array to store up to 20 student_info objects
+       student_info[] students = new student_info[20];
+       int studentCounter = 0;
+       
+       int choice;
+       
+       do
+       {
+           System.out.println("\nMenu:");
+           System.out.println("1. Add a student");
+           System.out.println("2. Display all students");
+           System.out.println("3. Delete a student");
+           System.out.println("4. Exit");
+           System.out.print("Enter your choice: ");
+       }
+       
+       
+       
+       
+       
+       
+       
+       
     }
 }
 

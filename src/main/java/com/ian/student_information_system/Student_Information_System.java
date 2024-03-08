@@ -1,5 +1,6 @@
 
 package com.ian.student_information_system;
+import java.util.Scanner;
 
 
 //THIS SYSTEM HELPS MY KNOWLEDGE IN ENCAPSULATIONse

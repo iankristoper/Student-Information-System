@@ -63,9 +63,11 @@ public class Student_Information_System
        
        //Array to store up to 20 student_info objects
        student_info[] students = new student_info[20];
-       int studentCounter = 0;
        
-       int choice;
+       int studentCounter = 0;  //Counter for the student
+       
+       
+       int choice;  //This variable will contain what the user will be choosing
        
        do
        {

@@ -18,14 +18,14 @@ TIPS:
 
 */
                 
-public class student_info
+class student_info
 {
     //INSTANCE VARIABLES
     private String name;
     private int age;
     private double grades;
     
-    //PARAMETIZED CONSTRUCTOR 
+    //PARAMETIZED CONSTRUCTOR -> used to set the private attributes
     public student_info(String student_name, int student_age, double student_grades)
     {
         //this. - used to refer to the instance variable 
@@ -67,7 +67,7 @@ public class Student_Information_System
        int studentCounter = 0;  //Counter for the student
        
        
-       int choice = scanner.nextInt();  //This variable will contain what the user will be choosing
+       int choice;  //This variable will contain what the user will be choosing
        
        do
        {
@@ -78,7 +78,7 @@ public class Student_Information_System
            System.out.println("4. Exit");
            System.out.print("Enter your choice: ");
            
-           int choice = scanner.nextInt();
+           choice = scanner.nextInt();
            
            switch(choice)
            {
@@ -96,14 +96,48 @@ public class Student_Information_System
                        //new student_info(name, age, grades) -> creating new instance(object) of the student info class
                        //"new" -> keyword used to allocate memory for the new object
                        //when the student_info is created the constructor is also called, 
-                       //responsible for handling the data to the privete attributes
+                       //responsible for handling the data to the private attributes
                        students[studentCounter] = new student_info(name, age, grades);
+                       studentCounter++;
                        
+                       System.out.println("Student added successfully!");                   
                    }
+                   else 
+                   {
+                       System.out.println("Maximum number of students has reached!");
+                   }
+                   break;
+                   
+                   
+               case 2:
+               {
+                   if(studentCounter > 0)
+                   {
+                       System.out.println("\nStudent Records: ");
+                       
+                       for(int i = 0; i < studentCounter; i++)
+                       {
+                           System.out.println("Student " + (i + 1) + ": " );
+                           System.out.println("Name: " + students[i].getName());
+                           System.out.println("Age: " + students[i].getAge());
+                           System.out.println("Grades: " + students[i].getGrades());
+                           System.out.println("--------------------");
+                       }
+                   }
+                   else 
+                   {
+                       System.out.println("Empty student records!");
+                   }
+               }
+               break;
+                   
+         
+                   
+                   
            }
-       }
+       } while(choice != 4);
        
-       
+       scanner.close();
        
        
        

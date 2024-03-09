@@ -61,13 +61,13 @@ public class Student_Information_System
     {
        Scanner scanner = new Scanner(System.in);
        
-       //Array to store up to 20 student_info objects
+       //Array to store up to 20 student_info object
        student_info[] students = new student_info[20];
        
        int studentCounter = 0;  //Counter for the student
        
        
-       int choice;  //This variable will contain what the user will be choosing
+       int choice = scanner.nextInt();  //This variable will contain what the user will be choosing
        
        do
        {
@@ -92,6 +92,11 @@ public class Student_Information_System
                        System.out.println("Enter student grades: ");
                        double grades = scanner.nextDouble();
                        
+                       //after the user input all the data 
+                       //new student_info(name, age, grades) -> creating new instance(object) of the student info class
+                       //"new" -> keyword used to allocate memory for the new object
+                       //when the student_info is created the constructor is also called, 
+                       //responsible for handling the data to the privete attributes
                        students[studentCounter] = new student_info(name, age, grades);
                        
                    }

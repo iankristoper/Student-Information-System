@@ -81,6 +81,7 @@ public class Student_Information_System
            
            switch(choice)
            {
+               //this case is about adding student information to the students array
                case 1:
                {
                    if(studentCounter < 20)
@@ -108,7 +109,8 @@ public class Student_Information_System
                    }
                } break;
                      
-                   
+               
+               //this case is about viewing student records 
                case 2:
                {
                    if(studentCounter > 0)
@@ -131,10 +133,13 @@ public class Student_Information_System
                } break;
                
                
+               //this case is about deleting the data from the array
                case 3:
                {
+                   //check if there is data by checking the student counter
                    if(studentCounter > 0)
                    {
+                       //if yes then proceed on deleting 
                        System.out.println("Enter student number to delete 1 - " + studentCounter + "): ");
                        int deleteIndex = scanner.nextInt();
                        
@@ -142,25 +147,39 @@ public class Student_Information_System
                        {
                            for(int i = deleteIndex - 1; i < studentCounter; i++)
                            {
-                               
+                               students[i] = students[i + 1];
                            }
+                           students[studentCounter - 1] = null;
+                           studentCounter--;
+                           
+                           System.out.println("Students record deleted successfully!");
                        }
+                       else 
+                       {
+                           System.out.println("Invalid number...");
+                       }
+                   }
+                   else 
+                   {
+                       System.out.println("No students record");
                    }
                } break;
                
-                   
-         
-                   
+               case 4:
+               {
+                   System.out.println("Closing the program");
+               } break;
+               
+               
+               default:
+               {
+                   System.out.println("Invalid choice, Please enter a valid option");
+               } break;       
                    
            }
        } while(choice != 4);
        
        scanner.close();
-       
-       
-       
-       
-       
        
     }
 }

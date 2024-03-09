@@ -77,6 +77,25 @@ public class Student_Information_System
            System.out.println("3. Delete a student");
            System.out.println("4. Exit");
            System.out.print("Enter your choice: ");
+           
+           int choice = scanner.nextInt();
+           
+           switch(choice)
+           {
+               case 1:
+                   if(studentCounter < 20)
+                   {
+                       System.out.println("Enter student name: ");
+                       String name = scanner.nextLine();
+                       System.out.println("Enter student age: ");
+                       int age = scanner.nextInt();
+                       System.out.println("Enter student grades: ");
+                       double grades = scanner.nextDouble();
+                       
+                       students[studentCounter] = new student_info(name, age, grades);
+                       
+                   }
+           }
        }
        
        

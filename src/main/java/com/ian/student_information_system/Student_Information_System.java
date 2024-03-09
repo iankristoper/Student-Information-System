@@ -21,9 +21,9 @@ TIPS:
 class student_info
 {
     //INSTANCE VARIABLES
-    private String name;
-    private int age;
-    private double grades;
+    private final String name;
+    private final int age;
+    private final double grades;
     
     //PARAMETIZED CONSTRUCTOR -> used to set the private attributes
     public student_info(String student_name, int student_age, double student_grades)
@@ -65,9 +65,7 @@ public class Student_Information_System
        student_info[] students = new student_info[20];
        
        int studentCounter = 0;  //Counter for the student
-       
-       
-       int choice;  //This variable will contain what the user will be choosing
+       int choice;              //This variable will contain what the user will be choosing
        
        do
        {
@@ -79,17 +77,19 @@ public class Student_Information_System
            System.out.print("Enter your choice: ");
            
            choice = scanner.nextInt();
+           scanner.nextLine();
            
            switch(choice)
            {
                case 1:
+               {
                    if(studentCounter < 20)
                    {
-                       System.out.println("Enter student name: ");
+                       System.out.print("Enter student name: ");
                        String name = scanner.nextLine();
-                       System.out.println("Enter student age: ");
+                       System.out.print("Enter student age: ");
                        int age = scanner.nextInt();
-                       System.out.println("Enter student grades: ");
+                       System.out.print("Enter student grades: ");
                        double grades = scanner.nextDouble();
                        
                        //after the user input all the data 
@@ -106,8 +106,8 @@ public class Student_Information_System
                    {
                        System.out.println("Maximum number of students has reached!");
                    }
-                   break;
-                   
+               } break;
+                     
                    
                case 2:
                {
@@ -128,8 +128,26 @@ public class Student_Information_System
                    {
                        System.out.println("Empty student records!");
                    }
-               }
-               break;
+               } break;
+               
+               
+               case 3:
+               {
+                   if(studentCounter > 0)
+                   {
+                       System.out.println("Enter student number to delete 1 - " + studentCounter + "): ");
+                       int deleteIndex = scanner.nextInt();
+                       
+                       if(deleteIndex >= 1 && deleteIndex <= studentCounter)
+                       {
+                           for(int i = deleteIndex - 1; i < studentCounter; i++)
+                           {
+                               
+                           }
+                       }
+                   }
+               } break;
+               
                    
          
                    

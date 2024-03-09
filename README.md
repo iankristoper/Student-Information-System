@@ -1,2 +1,8 @@
 # My-Java-Project
-This is my java projects 
+This is one my java projects 
+
+In this project it highlights the following:
+  Encapsulation
+  Constructors
+  Class and methods
+  

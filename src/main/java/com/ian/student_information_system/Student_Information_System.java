@@ -48,11 +48,7 @@ class student_info
     public double getGrades()
     {
         return grades;
-    }
-       
-    
-    
-            
+    }       
 }
 
 
